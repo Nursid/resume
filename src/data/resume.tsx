@@ -9,14 +9,14 @@ import { HomeIcon, NotebookIcon } from "lucide-react";
 
 export const DATA = {
   name: "Nursid Ansari",
-  initials: "DV",
-  url: "https://dillion.io",
-  location: "Lucknow, India",
+  initials: "NA",
+  url: "https://nursid.in",
+  location: "Lucknow, Uttar Pradesh, India",
   locationLink: "https://www.google.co.in/maps",
   description:
-    "Full Stack Developer specializing in JavaScript, React, and Node.js. I build fast, scalable web apps with great user experiences. Love solving problems through code and sharing knowledge with the developer community.",
+    "I'm Nursid Ansari, a software engineer specializing in building scalable and user-centric web applications. Welcome to my portfolio.",
   summary:
-    "As a passionate Full Stack Developer with 2+ years of experience, I specialize in building scalable web applications using JavaScript, React.js, and Node.js. I excel in creating intuitive UIs, designing RESTful APIs, and managing databases like MySQL and Cloudflare D1",
+    "As a passionate Full Stack Developer with 2+ years of experience, I specialize in building scalable web applications using JavaScript, React.js, and Node.js. I excel in creating intuitive UIs, designing RESTful APIs, and managing databases like MySQL and Cloudflare D1. I am a quick learner and always looking to improve my skills.",
   avatarUrl: "/me.jpeg",
   skills: [
     "React",
@@ -46,14 +46,12 @@ export const DATA = {
         name: "GitHub",
         url: "https://github.com/Nursid",
         icon: Icons.github,
-
         navbar: true,
       },
       LinkedIn: {
         name: "LinkedIn",
         url: "https://www.linkedin.com/in/nursid-ansari-076772229/",
         icon: Icons.linkedin,
-
         navbar: true,
       },
       X: {
