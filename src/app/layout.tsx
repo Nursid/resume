@@ -55,16 +55,36 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                if (localStorage.getItem('portfolio-theme') === 'dark' || (!('portfolio-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                  document.documentElement.classList.add('dark')
+                } else {
+                  document.documentElement.classList.remove('dark')
+                }
+              } catch (_) {}
+            `,
+          }}
+        />
+      </head>
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased max-w-2xl mx-auto py-12 sm:py-24 px-6",
           fontSans.variable
         )}
       >
-        <ThemeProvider attribute="class" defaultTheme="light">
+        <ThemeProvider 
+          attribute="class" 
+          defaultTheme="system" 
+          enableSystem={true}
+          storageKey="portfolio-theme"
+        >
           <TooltipProvider delayDuration={0}>
             {children}
-            {/* <Navbar /> */}
+            <Navbar />
           </TooltipProvider>
         </ThemeProvider>
       </body>

@@ -13,7 +13,7 @@ const BLUR_FADE_DELAY = 0.04;
 
 export default function Page() {
   return (
-    <main className="flex flex-col min-h-[100dvh] space-y-12">
+    <main className="flex flex-col min-h-[100dvh] space-y-12 pt-20">
 
       <section className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b mx-auto w-full max-w-2xl">
         <div className="flex items-center justify-between px-6 py-4 mx-auto">
