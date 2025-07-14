@@ -46,6 +46,14 @@ export const metadata: Metadata = {
     google: "",
     yandex: "",
   },
+  icons: [
+    {
+      url: '/favicon.png',
+      rel: 'icon',
+      sizes: 'any',
+      type: 'image/x-icon',
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -84,7 +92,7 @@ export default function RootLayout({
         >
           <TooltipProvider delayDuration={0}>
             {children}
-            <Navbar />
+            {/* <Navbar /> */}
           </TooltipProvider>
         </ThemeProvider>
       </body>

@@ -1,10 +1,5 @@
 import { Icons } from "@/components/icons";
 import { HomeIcon, NotebookIcon } from "lucide-react";
-// import BTPLLOGO from "/BTPLLOGO.jpg";
-// import HTLLOGO from "/HTL-Logo.png";
-// import CLGLOGO from "/CLGLOGO.jpg";
-// import HELPER from "/helper.png";
-// import CODEBOLT from "/codebolt.png";
 
 
 export const DATA = {

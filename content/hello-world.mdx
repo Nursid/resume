@@ -1,16 +1,35 @@
 ---
-title: "Hello World"
-publishedAt: "2024-06-18"
+title: "Cloudflare D1& R2"
+publishedAt: "2025-07-14"
 summary: "My first post on my new blog."
 ---
+# ☁️ Cloudflare D1 & R2 Guide
 
-Hi there!
+## 📘 What is Cloudflare D1?
 
-```jsx
-console.log("Hello World");
+Cloudflare D1 is a serverless SQL database built on SQLite. It allows you to use a lightweight, persistent database directly with Cloudflare Workers — no server or maintenance needed.
+
+### 🔑 Key Features
+- SQLite-based
+- Serverless & scalable
+- Easy integration with Cloudflare Workers
+- Supports standard SQL
+
+### 🧪 Example: Using D1 with a Worker
+
+```toml title="wrangler.toml"
+[[d1_databases]]
+binding = "DB"
+database_name = "my-database"
+database_id = "<your-database-id>"
 ```
 
-| Header 1 | Header 2 |
-| -------- | -------- |
-| Cell 1   | Cell 2   |
-| Cell 3   | Cell 4   |
+
+```ts title="index.ts"
+export default {
+  async fetch(request, env) {
+    const { DB } = env;
+    const result = await DB.prepare("SELECT * FROM users").all();
+    return new Response(JSON.stringify(result));
+  }
+}

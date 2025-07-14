@@ -7,15 +7,15 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { DATA } from "@/data/resume";
 import Link from "next/link";
-import Markdown from "react-markdown";
+
 
 const BLUR_FADE_DELAY = 0.04;
 
 export default function Page() {
   return (
-    <main className="flex flex-col min-h-[100dvh] space-y-12 pt-20">
-
-      <section className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b mx-auto w-full max-w-2xl">
+    <>
+    <main className="flex flex-col min-h-[100dvh] space-y-12">
+      <section className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md mx-auto w-full max-w-2xl">
         <div className="flex items-center justify-between px-6 py-4 mx-auto">
           <div className="flex items-center space-x-2">
             <Link href="/" className="flex items-center space-x-2">
@@ -29,7 +29,7 @@ export default function Page() {
             >
               About
             </Link>
-            <Link 
+            <Link
               href="#projects" 
               className="text-md font-medium hover:text-primary transition-colors"
             >
@@ -85,7 +85,7 @@ export default function Page() {
             />
             
             {/* Enhanced Social Icons */}
-            <BlurFade delay={BLUR_FADE_DELAY * 5}>
+            {/* <BlurFade delay={BLUR_FADE_DELAY * 5}> */}
               <div className="flex items-center space-x-4">
                 {Object.entries(DATA.contact.social)
                   .filter(([_, social]) => social.navbar)
@@ -93,17 +93,20 @@ export default function Page() {
                     <Link
                       key={name}
                       href={social.url}
-                      className="group relative flex items-center justify-center w-12 h-12 rounded-xl bg-muted hover:bg-primary/10 border border-transparent hover:border-primary/20 transition-all duration-300 hover:scale-110 hover:shadow-lg"
+                      className="flex items-center justify-center rounded-md h-10 w-10 hover:bg-primary/10 border border-transparent hover:border-primary/20 transition-all duration-300 hover:scale-110 hover:shadow-lg"
+                      // group relative flex items-center justify-center w-12 h-12 rounded-xl bg-muted hover:bg-primary/10 border border-transparent hover:border-primary/20 transition-all duration-300 hover:scale-110 hover:shadow-lg
                     >
                       <social.icon className="size-5 text-muted-foreground group-hover:text-primary transition-colors duration-300 group-hover:scale-110" />
-                      {/* Tooltip */}
+                     
                       <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-foreground text-background text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
                         {name}
                       </div>
                     </Link>
                   ))}
               </div>
-            </BlurFade>
+            {/* </BlurFade> */}
+
+            
                     </div>
         </div>
       </section>
@@ -145,16 +148,11 @@ export default function Page() {
           </div>
         </div>
       </section>
-      {/* <section id="about">
-        <BlurFade delay={BLUR_FADE_DELAY * 3}>
-          <h2 className="text-xl font-bold">About</h2>
-        </BlurFade>
-        <BlurFade delay={BLUR_FADE_DELAY * 4}>
-          <Markdown className="prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert">
-            {DATA.summary}
-          </Markdown>
-        </BlurFade>
-      </section> */}
+
+      <div className="mx-auto w-full max-w-2xl">
+        <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent "></div>
+      </div>
+      
       <section id="work">
         <div className="flex min-h-0 flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 5}>
@@ -180,6 +178,10 @@ export default function Page() {
           ))}
         </div>
       </section>
+
+      <div className="mx-auto w-full max-w-2xl">
+        <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent "></div>
+      </div>
       <section id="education">
         <div className="flex min-h-0 flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 7}>
@@ -203,6 +205,10 @@ export default function Page() {
           ))}
         </div>
       </section>
+
+      <div className="mx-auto w-full max-w-2xl">
+        <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent "></div>
+      </div>
       <section id="skills">
         <div className="flex min-h-0 flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 9}>
@@ -217,8 +223,10 @@ export default function Page() {
           </div>
         </div>
       </section>
-    
-      <section id="contact">
+      {/* <div className="mx-auto w-full max-w-2xl">
+        <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent "></div>
+      </div> */}
+      {/* <section id="contact">
         <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full py-12">
           <BlurFade delay={BLUR_FADE_DELAY * 16}>
             <div className="space-y-3">
@@ -242,7 +250,72 @@ export default function Page() {
             </div>
           </BlurFade>
         </div>
-      </section>
+      </section> */}
+      
+
+      
+     <div className="w-full">
+        <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent "></div>
+      </div>
+
+
+  <footer id="footer" className="w-full">
+    <div className="w-full px-4 py-6 lg:py-8">
+      <div className="flex flex-row justify-between max-w-screen-xl mx-auto">
+        <div>
+            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Company</h2>
+            <ul className="text-gray-500 dark:text-gray-400 font-medium">
+                <li className="mb-4">
+                    <a href="#" className="hover:underline">About</a>
+                </li>
+                <li className="mb-4">
+                    <a href="#" className="hover:underline">Careers</a>
+                </li>
+                <li className="mb-4">
+                    <a href="#" className="hover:underline">Brand Center</a>
+                </li>
+                <li className="mb-4">
+                    <a href="#" className="hover:underline">Blog</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Help center</h2>
+            <ul className="text-gray-500 dark:text-gray-400 font-medium">
+                <li className="mb-4">
+                    <a href="#" className="hover:underline">Discord Server</a>
+                </li>
+                <li className="mb-4">
+                    <a href="#" className="hover:underline">Twitter</a>
+                </li>
+                <li className="mb-4">
+                    <a href="#" className="hover:underline">Facebook</a>
+                </li>
+                <li className="mb-4">
+                    <a href="#" className="hover:underline">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
+            <ul className="text-gray-500 dark:text-gray-400 font-medium">
+                <li className="mb-4">
+                    <a href="#" className="hover:underline">Privacy Policy</a>
+                </li>
+                <li className="mb-4">
+                    <a href="#" className="hover:underline">Licensing</a>
+                </li>
+                <li className="mb-4">
+                    <a href="#" className="hover:underline">Terms &amp; Conditions</a>
+                </li>
+            </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+     
     </main>
+   
+    </>
   );
 }
